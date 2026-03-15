@@ -14,7 +14,7 @@ app.use("/api/tasks", require("./routes/taskRoutes"));
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB Connected"))
+  .then(() => console.log("MongoDB Connected*****"))
   .catch(err => console.log(err));
 
 app.get("/", (req, res) => {
@@ -23,6 +23,11 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+*/
+
+app.listen(process.env.PORT || 5000, () =>
+  console.log("Server running")
+);
